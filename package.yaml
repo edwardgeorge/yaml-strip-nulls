@@ -21,28 +21,19 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-
-library:
-  source-dirs: src
+- aeson
+- bytestring
+- hashable
+- optparse-applicative
+- unordered-containers
+- yaml
 
 executables:
-  yaml-strip-nulls-exe:
+  yaml-strip-nulls:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
+    - -Wall
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:
-    - yaml-strip-nulls
-
-tests:
-  yaml-strip-nulls-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - yaml-strip-nulls
